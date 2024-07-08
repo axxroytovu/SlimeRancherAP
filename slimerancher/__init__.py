@@ -1,12 +1,13 @@
 import typing
 import os, json
-from .Items import item_table, SlimeItem
-from .Locations import location_table, SlimeLocation
+from .Items import item_table, item_name_to_id, SlimeItem
+from .Locations import location_table, events_table, location_name_to_id, SlimeLocation
 from .Options import SlimeOptions
 from .Rules import set_rules
 from .Regions import create_regions
 from BaseClasses import Item, ItemClassification, Tutorial
 from ..AutoWorld import World, WebWorld
+from Utils import visualize_regions
 
 client_version = 1
 
@@ -22,7 +23,7 @@ class SlimeWeb(WebWorld):
     )]
 
 
-class V6World(World):
+class SlimeWorld(World):
     """ 
     Slime Rancher: wrangle slimes and explore the far far range.
     """ 
@@ -31,17 +32,15 @@ class V6World(World):
     topology_present = False
     web = SlimeWeb()
 
-    item_name_to_id = item_table
-    location_name_to_id = location_table
+    item_name_to_id = item_name_to_id
+    location_name_to_id = location_name_to_id
 
     data_version = 1
 
-    area_connections: typing.Dict[int, int]
-    area_cost_map: typing.Dict[int,int]
-
-    music_map: typing.Dict[int,int]
-
     options_dataclass = SlimeOptions
+
+    def get_filler_item_name():
+        return "Garbage"
 
     def create_regions(self):
         create_regions(self.multiworld, self.player)
@@ -50,25 +49,28 @@ class V6World(World):
         set_rules(self.multiworld, self.options, self.player)
 
     def create_item(self, name: str, itemtype: ItemClassification) -> Item:
-        return SlimeItem(name, ItemClassification.progression, item_table[name], self.player)
+        return SlimeItem(name, itemtype, self.item_name_to_id.get(name, None), self.player)
 
     def create_items(self):
-        trinkets = [self.create_item("Trinket " + str(i+1).zfill(2)) for i in range(0,20)]
-        self.multiworld.itempool += trinkets
+        items = []
+        for itm_name, info in item_table.items():
+            for _ in range(info[1]):
+                items.append(self.create_item(itm_name, info[0]))
+
+        for location in self.multiworld.get_unfilled_locations(self.player):
+            if location.name in events_table:
+                event_item = self.create_item(location.name, ItemClassification.progression)
+                location.place_locked_item(event_item)
+
+        needed_items = len(self.multiworld.get_unfilled_locations(self.player))
+        while len(items) < needed_items:
+            items.append(self.create_filler())
+        self.multiworld.itempool += items
 
     def generate_basic(self):
-        musiclist_o = [1,2,3,4,9,12]
-        musiclist_s = musiclist_o.copy()
-        if self.options.music_rando:
-            self.multiworld.random.shuffle(musiclist_s)
-        self.music_map = dict(zip(musiclist_o, musiclist_s))
+        visualize_regions(self.multiworld.get_region("Menu", self.player), f"{self.game}_{self.player}.puml")
 
     def fill_slot_data(self):
         return {
-            "MusicRando": self.music_map,
-            "AreaRando": self.area_connections,
-            "DoorCost": self.options.door_cost.value,
-            "AreaCostRando": self.area_cost_map,
-            "DeathLink": self.options.death_link.value,
-            "DeathLink_Amnesty": self.options.death_link_amnesty.value
+            "DeathLink": self.options.death_link.value
         }
