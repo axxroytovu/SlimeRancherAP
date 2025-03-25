@@ -38,8 +38,8 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
     if category < 1/3:
         return False
     elif category < 2/3:
-        return multiworld.random.choice(["4x Novice Drill", "3x Advanced Drill", "2x Master Drill", "1x Titan Drill", "4x Novice Pump", "3x Advanced Pump", "2x Master Pump", "1x Abyssal Pump", "4x Novice Apiary", "3x Advanced Apiary", "2x Master Apiary", "1x Royal Apiary"])
-    return multiworld.random.choice(["1x Market Link", "1x Med Station", "1x Hydro Turret", "1x Super Hydro Turret", "1x Spring Pad", "1x Refinery Link", "1x Novice Gordo Snare", "1x Advanced Gordo Snare", "1x Master Gordo Snare", "2x Drone", "1x Advanced Drone", "1x Portable Water Tap", "1x Dash Pad"])
+        return multiworld.random.choice(["Novice Drill", "Advanced Drill", "Master Drill", "Titan Drill", "Novice Pump", "Advanced Pump", "Master Pump", "Abyssal Pump", "Novice Apiary", "Advanced Apiary", "Master Apiary", "Royal Apiary"])
+    return multiworld.random.choice(["Market Link", "Med Station", "Hydro Turret", "Super Hydro Turret", "Spring Pad", "Refinery Link", "Novice Gordo Snare", "Advanced Gordo Snare", "Master Gordo Snare", "Drone", "Advanced Drone", "Portable Water Tap", "Dash Pad"])
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):

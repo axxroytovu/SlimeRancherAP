@@ -77,7 +77,8 @@
         "category": [
             "Slime Gates"
         ],
-        "progression": true
+        "progression": true,
+        "id": 200
     },
     {
         "count": 1,
@@ -146,51 +147,12 @@
     },
     {
         "count": 1,
-        "name": "Map Data - Dry Reef",
-        "category": [
-            "Map Data"
-        ],
-        "useful": true
-    },
-    {
-        "count": 1,
-        "name": "Map Data - Moss Blanket",
-        "category": [
-            "Map Data"
-        ],
-        "useful": true
-    },
-    {
-        "count": 1,
-        "name": "Map Data - Indigo Quarry",
-        "category": [
-            "Map Data"
-        ],
-        "useful": true
-    },
-    {
-        "count": 1,
-        "name": "Map Data - Ancient Ruins",
-        "category": [
-            "Map Data"
-        ],
-        "useful": true
-    },
-    {
-        "count": 1,
-        "name": "Map Data - Glass Desert",
-        "category": [
-            "Map Data"
-        ],
-        "useful": true
-    },
-    {
-        "count": 1,
         "name": "Teleporter - Dry Reef to Ring Island",
         "category": [
             "Teleporters"
         ],
-        "progression": true
+        "progression": true,
+        "id": 250
     },
     {
         "count": 1,
@@ -225,388 +187,13 @@
         "progression": true
     },
     {
-        "count": "0",
-        "name": "4x Novice Drill",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "3x Advanced Drill",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "2x Master Drill",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Titan Drill",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "4x Novice Pump",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "3x Advanced Pump",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "2x Master Pump",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Abyssal Pump",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "4x Novice Apiary",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "3x Advanced Apiary",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "2x Master Apiary",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Royal Apiary",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Pink Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Blue Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Violet Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Grey Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Green Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Red Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Amber Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Gold Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Berry Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Cocoa Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "2x Butterscotch Teleporter",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Pink Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Blue Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Violet Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Grey Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Green Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Red Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Amber Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Gold Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Berry Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Cocoa Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 1,
-        "name": "1x Butterscotch Warp Depot",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Market Link",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Med Station",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Hydro Turret",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Super Hydro Turret",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Spring Pad",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Refinery Link",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Novice Gordo Snare",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Advanced Gordo Snare",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Master Gordo Snare",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "2x Drone",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Advanced Drone",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Portable Water Tap",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
-        "count": 0,
-        "name": "1x Dash Pad",
-        "category": [
-            "Gadgets"
-        ],
-        "filler": true
-    },
-    {
         "count": 1,
         "name": "Ranch Expansion - The Grotto",
         "category": [
             "Ranch Upgrades"
         ],
-        "progression": true
+        "progression": true,
+        "id": 300
     },
     {
         "count": 1,
@@ -631,5 +218,485 @@
             "Ranch Upgrades"
         ],
         "progression": true
+    },
+    {
+        "count": 1,
+        "name": "Map Data - Dry Reef",
+        "category": [
+            "Map Data"
+        ],
+        "useful": true,
+        "id": 500
+    },
+    {
+        "count": 1,
+        "name": "Map Data - Moss Blanket",
+        "category": [
+            "Map Data"
+        ],
+        "useful": true
+    },
+    {
+        "count": 1,
+        "name": "Map Data - Indigo Quarry",
+        "category": [
+            "Map Data"
+        ],
+        "useful": true
+    },
+    {
+        "count": 1,
+        "name": "Map Data - Ancient Ruins",
+        "category": [
+            "Map Data"
+        ],
+        "useful": true
+    },
+    {
+        "count": 1,
+        "name": "Map Data - Glass Desert",
+        "category": [
+            "Map Data"
+        ],
+        "useful": true
+    },
+    {
+        "count": "0",
+        "name": "Dry Reef Resource Pack - Low",
+        "_note": "default: 3x spiral steam",
+        "category": ["Resources"],
+        "filler": true,
+        "id": 1000
+    },
+    {
+        "count": "0",
+        "name": "Dry Reef Resource Pack - High",
+        "_note": "default: 2x Deep Brine, 1x Lava Dust",
+        "category": ["Resources"],
+        "filler": true
+    },
+    {
+        "count": "0",
+        "name": "Moss Blanket Resource Pack - Low",
+        "_note": "default: 3x Hexacomb",
+        "category": ["Resources"],
+        "filler": true
+    },
+    {
+        "count": "0",
+        "name": "Moss Blanket Resource Pack - High",
+        "_note": "default: 2x Wild Honey, 1x Royal Jelly",
+        "category": ["Resources"],
+        "filler": true
+    },
+    {
+        "count": "0",
+        "name": "Indigo Quarry Resource Pack - Low",
+        "_note": "default: 3x Slime Fossil",
+        "category": ["Resources"],
+        "filler": true
+    },
+    {
+        "count": "0",
+        "name": "Indigo Quarry Resource Pack - High",
+        "_note": "default: 2x Indigonium, 1x Strange Diamond",
+        "category": ["Resources"],
+        "filler": true
+    },
+    {
+        "count": "0",
+        "name": "3 Gold Plorts",
+        "category": ["Resources"],
+        "filler": true
+    },
+    {
+        "count": "0",
+        "name": "Novice Drill",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true,
+        "id": 2000
+    },
+    {
+        "count": 0,
+        "name": "Advanced Drill",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Master Drill",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Titan Drill",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Novice Pump",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Advanced Pump",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Master Pump",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Abyssal Pump",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Novice Apiary",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Advanced Apiary",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Master Apiary",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Royal Apiary",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Pink Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Blue Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Violet Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Grey Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Green Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Red Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Amber Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Gold Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Berry Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Cocoa Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Butterscotch Teleporter",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Pink Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Blue Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Violet Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Grey Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Green Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Red Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Amber Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Gold Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Berry Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Cocoa Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 1,
+        "name": "Butterscotch Warp Depot",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Market Link",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Med Station",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Hydro Turret",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Super Hydro Turret",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Spring Pad",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Refinery Link",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Novice Gordo Snare",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Advanced Gordo Snare",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Master Gordo Snare",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Drone",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Advanced Drone",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Portable Water Tap",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Dash Pad",
+        "category": [
+            "Gadgets"
+        ],
+        "filler": true
+    },
+    {
+        "count": 0,
+        "name": "Recipe - Drone",
+        "category": ["Recipes"],
+        "filler": true,
+        "id": 3000
+    },
+    {
+        "count": 0,
+        "name": "Recipe - Advanced Drone",
+        "category": ["Recipes"],
+        "filler": true
     }
 ]
