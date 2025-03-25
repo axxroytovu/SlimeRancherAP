@@ -3,8 +3,8 @@ from worlds.AutoWorld import World
 from BaseClasses import MultiWorld, CollectionState, ItemClassification
 
 # Object classes from Manual -- extending AP core -- representing items and locations that are used in generation
-from ..Items import ManualItem
-from ..Locations import ManualLocation
+from ..Items import SlimeItem
+from ..Locations import SlimeLocation
 
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
@@ -70,8 +70,8 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     for e_name, regions in events.items():
         for region in regions:
             e_region = multiworld.get_region(region, player)
-            e_item = ManualItem(e_name, ItemClassification.progression, None, player=player)
-            e_loc = ManualLocation(player, f"{e_name}_{region}", None, e_region)
+            e_item = SlimeItem(e_name, ItemClassification.progression, None, player=player)
+            e_loc = SlimeLocation(player, f"{e_name}_{region}", None, e_region)
             e_region.locations.append(e_loc)
             e_loc.place_locked_item(e_item)
 
@@ -156,7 +156,7 @@ def before_create_item(item_name: str, world: World, multiworld: MultiWorld, pla
     return item_name
 
 # The item that was created is provided after creation, in case you want to modify the item
-def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, player: int) -> ManualItem:
+def after_create_item(item: SlimeItem, world: World, multiworld: MultiWorld, player: int) -> SlimeItem:
     return item
 
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
