@@ -17,9 +17,9 @@ from .Items import item_id_to_name, item_name_to_id, item_name_to_item, item_nam
 from .DataValidation import runGenerationDataValidation, runPreFillDataValidation
 
 from .Regions import create_regions
-from .Items import ManualItem
+from .Items import SlimeItem
 from .Rules import set_rules
-from .Options import manual_options_data
+from .Options import slime_options_data
 from .Helpers import is_item_enabled, get_option_value, get_items_for_player, resolve_yaml_option
 
 from BaseClasses import ItemClassification, Tutorial, Item
@@ -36,12 +36,12 @@ from .hooks.World import \
     before_extend_hint_information, after_extend_hint_information
 from .hooks.Data import hook_interpret_slot_data
 
-class ManualWorld(World):
+class SlimeWorld(World):
     __doc__ = world_description
     game: str = game_name
     web = world_webworld
 
-    options_dataclass = manual_options_data
+    options_dataclass = slime_options_data
     data_version = 2
     required_client_version = (0, 3, 4)
 
@@ -105,7 +105,7 @@ class ManualWorld(World):
             unused_goal.parent_region.locations.remove(unused_goal)
 
         location_game_complete.place_locked_item(
-            ManualItem("__Victory__", ItemClassification.progression, None, player=self.player))
+            SlimeItem("__Victory__", ItemClassification.progression, None, player=self.player))
 
         after_create_regions(self, self.multiworld, self.player)
 
@@ -229,7 +229,7 @@ class ManualWorld(World):
         if "progression_skip_balancing" in item and item["progression_skip_balancing"]:
             classification = ItemClassification.progression_skip_balancing
 
-        item_object = ManualItem(name, classification,
+        item_object = SlimeItem(name, classification,
                         self.item_name_to_id[name], player=self.player)
 
         item_object = after_create_item(item_object, self, self.multiworld, self.player)
@@ -247,26 +247,26 @@ class ManualWorld(World):
         before_generate_basic(self, self.multiworld, self.player)
 
         # Handle item forbidding
-        manual_locations_with_forbid = {location['name']: location for location in location_name_to_location.values() if "dont_place_item" in location or "dont_place_item_category" in location}
-        locations_with_forbid = [l for l in self.multiworld.get_unfilled_locations(player=self.player) if l.name in manual_locations_with_forbid.keys()]
+        slime_locations_with_forbid = {location['name']: location for location in location_name_to_location.values() if "dont_place_item" in location or "dont_place_item_category" in location}
+        locations_with_forbid = [l for l in self.multiworld.get_unfilled_locations(player=self.player) if l.name in slime_locations_with_forbid.keys()]
         for location in locations_with_forbid:
-            manual_location = manual_locations_with_forbid[location.name]
+            slime_location = slime_locations_with_forbid[location.name]
             forbidden_item_names = []
 
-            if manual_location.get("dont_place_item"):
-                forbidden_item_names.extend([i["name"] for i in item_name_to_item.values() if i["name"] in manual_location["dont_place_item"]])
+            if slime_location.get("dont_place_item"):
+                forbidden_item_names.extend([i["name"] for i in item_name_to_item.values() if i["name"] in slime_location["dont_place_item"]])
 
-            if manual_location.get("dont_place_item_category"):
-                forbidden_item_names.extend([i["name"] for i in item_name_to_item.values() if "category" in i and set(i["category"]).intersection(manual_location["dont_place_item_category"])])
+            if slime_location.get("dont_place_item_category"):
+                forbidden_item_names.extend([i["name"] for i in item_name_to_item.values() if "category" in i and set(i["category"]).intersection(slime_location["dont_place_item_category"])])
 
             if forbidden_item_names:
                 forbid_items_for_player(location, set(forbidden_item_names), self.player)
 
         # Handle specific item placements using fill_restrictive
-        manual_locations_with_placements = {location['name']: location for location in location_name_to_location.values() if "place_item" in location or "place_item_category" in location}
-        locations_with_placements = [l for l in self.multiworld.get_unfilled_locations(player=self.player) if l.name in manual_locations_with_placements.keys()]
+        slime_locations_with_placements = {location['name']: location for location in location_name_to_location.values() if "place_item" in location or "place_item_category" in location}
+        locations_with_placements = [l for l in self.multiworld.get_unfilled_locations(player=self.player) if l.name in slime_locations_with_placements.keys()]
         for location in locations_with_placements:
-            manual_location = manual_locations_with_placements[location.name]
+            slime_location = slime_locations_with_placements[location.name]
             eligible_items = []
             eligible_item_names = []
             forbidden_item_names = []
@@ -274,22 +274,22 @@ class ManualWorld(World):
             forbid_messages = []
 
             #First we get possible items names
-            if manual_location.get("place_item"):
-                eligible_item_names += manual_location["place_item"]
-                place_messages.append('", "'.join(manual_location["place_item"]))
+            if slime_location.get("place_item"):
+                eligible_item_names += slime_location["place_item"]
+                place_messages.append('", "'.join(slime_location["place_item"]))
 
-            if manual_location.get("place_item_category"):
-                eligible_item_names += [i["name"] for i in item_name_to_item.values() if "category" in i and set(i["category"]).intersection(manual_location["place_item_category"])]
-                place_messages.append('", "'.join(manual_location["place_item_category"]) + " category(ies)")
+            if slime_location.get("place_item_category"):
+                eligible_item_names += [i["name"] for i in item_name_to_item.values() if "category" in i and set(i["category"]).intersection(slime_location["place_item_category"])]
+                place_messages.append('", "'.join(slime_location["place_item_category"]) + " category(ies)")
 
             # Second we check for forbidden items names
-            if manual_location.get("dont_place_item"):
-                forbidden_item_names += manual_location["dont_place_item"]
-                forbid_messages.append('", "'.join(manual_location["dont_place_item"]) + ' items')
+            if slime_location.get("dont_place_item"):
+                forbidden_item_names += slime_location["dont_place_item"]
+                forbid_messages.append('", "'.join(slime_location["dont_place_item"]) + ' items')
 
-            if manual_location.get("dont_place_item_category"):
-                forbidden_item_names += [i["name"] for i in item_name_to_item.values() if "category" in i and set(i["category"]).intersection(manual_location["dont_place_item_category"])]
-                forbid_messages.append('", "'.join(manual_location["dont_place_item_category"]) + ' category(ies)')
+            if slime_location.get("dont_place_item_category"):
+                forbidden_item_names += [i["name"] for i in item_name_to_item.values() if "category" in i and set(i["category"]).intersection(slime_location["dont_place_item_category"])]
+                forbid_messages.append('", "'.join(slime_location["dont_place_item_category"]) + ' category(ies)')
 
             # If we forbid some names, check for those in the possible names and remove them
             if forbidden_item_names:
@@ -301,8 +301,8 @@ class ManualWorld(World):
             if len(eligible_items) == 0:
                 nl = "\n"
                 if forbidden_item_names:
-                    raise Exception(f'Could not find a suitable item to place at "{manual_location["name"]}".\n    No items that match "{f"{nl}     or ".join(place_messages)}"\n    Maybe because of forbidden "{f"{nl}     or ".join(forbid_messages)}"')
-                raise Exception(f'Could not find a suitable item to place at "{manual_location["name"]}". \n    No items that match "{f"{nl}     or ".join(place_messages)}"')
+                    raise Exception(f'Could not find a suitable item to place at "{slime_location["name"]}".\n    No items that match "{f"{nl}     or ".join(place_messages)}"\n    Maybe because of forbidden "{f"{nl}     or ".join(forbid_messages)}"')
+                raise Exception(f'Could not find a suitable item to place at "{slime_location["name"]}". \n    No items that match "{f"{nl}     or ".join(place_messages)}"')
 
             item_to_place = self.random.choice(eligible_items)
             location.place_locked_item(item_to_place)
@@ -313,7 +313,7 @@ class ManualWorld(World):
 
         after_generate_basic(self, self.multiworld, self.player)
 
-        # Enable this in Meta.json to generate a diagram of your manual.  Only works on 0.4.4+
+        # Enable this in Meta.json to generate a region diagram.  Only works on 0.4.4+
         if enable_region_diagram:
             from Utils import visualize_regions
             visualize_regions(self.multiworld.get_region("Menu", self.player), f"{self.game}_{self.player}.puml")
@@ -337,10 +337,7 @@ class ManualWorld(World):
         return slot_data
 
     def generate_output(self, output_directory: str):
-        data = self.client_data()
-        filename = f"{self.multiworld.get_out_file_name_base(self.player)}.apmanual"
-        with open(os.path.join(output_directory, filename), 'wb') as f:
-            f.write(b64encode(bytes(json.dumps(data), 'utf-8')))
+        pass
 
     def write_spoiler(self, spoiler_handle):
         before_write_spoiler(self, self.multiworld, spoiler_handle)
@@ -433,45 +430,3 @@ class ManualWorld(World):
             'regions': region_table,
             'categories': category_table
         }
-
-###
-# Non-world client methods
-###
-
-def launch_client(*args):
-    import CommonClient
-    from .ManualClient import launch as Main
-
-    if CommonClient.gui_enabled:
-        launch_subprocess(Main, name="Manual client")
-    else:
-        Main()
-
-class VersionedComponent(Component):
-    def __init__(self, display_name: str, script_name: Optional[str] = None, func: Optional[Callable] = None, version: int = 0, file_identifier: Optional[Callable[[str], bool]] = None, icon: Optional[str] = None):
-        super().__init__(display_name=display_name, script_name=script_name, func=func, component_type=Type.CLIENT, file_identifier=file_identifier, icon=icon)
-        self.version = version
-
-def add_client_to_launcher() -> None:
-    version = 2024_11_03 # YYYYMMDD
-    found = False
-
-    if "manual" not in icon_paths:
-        icon_paths["manual"] = Utils.user_path('data', 'manual.png')
-        if not os.path.exists(icon_paths["manual"]):
-            icon_url = "https://manualforarchipelago.github.io/ManualBuilder/images/ap-manual-discord-logo-square-96x96.png"
-            with open(icon_paths["manual"], 'wb') as f:
-                f.write(requests.get(icon_url).content)
-
-    for c in components:
-        if c.display_name == "Manual Client":
-            found = True
-            if getattr(c, "version", 0) < version:  # We have a newer version of the Manual Client than the one the last apworld added
-                c.version = version
-                c.func = launch_client
-                c.icon = "manual"
-                return
-    if not found:
-        components.append(VersionedComponent("Manual Client", "ManualClient", func=launch_client, version=version, file_identifier=SuffixIdentifier('.apmanual'), icon="manual"))
-
-add_client_to_launcher()

@@ -20,7 +20,7 @@ def convert_to_list(data, property_name: str) -> list:
     return data
 
 
-class ManualFile:
+class SlimeFile:
     filename: str
     data_type: dict|list
 
@@ -37,12 +37,12 @@ class ManualFile:
         return contents
 
 
-game_table = ManualFile('game.json', dict).load() #dict
-item_table = convert_to_list(ManualFile('items.json', list).load(), 'data') #list
-location_table = convert_to_list(ManualFile('locations.json', list).load(), 'data') #list
-region_table = ManualFile('regions.json', dict).load() #dict
-category_table = ManualFile('categories.json', dict).load() #dict
-meta_table = ManualFile('meta.json', dict).load() #dict
+game_table = SlimeFile('game.json', dict).load() #dict
+item_table = convert_to_list(SlimeFile('items.json', list).load(), 'data') #list
+location_table = convert_to_list(SlimeFile('locations.json', list).load(), 'data') #list
+region_table = SlimeFile('regions.json', dict).load() #dict
+category_table = SlimeFile('categories.json', dict).load() #dict
+meta_table = SlimeFile('meta.json', dict).load() #dict
 
 # Removal of schemas in root of tables
 region_table.pop('$schema', '')

@@ -25,7 +25,7 @@ for key, _ in enumerate(location_table):
     location_table[key]["id"] = count
 
     if not "region" in location_table[key]:
-        location_table[key]["region"] = "Manual" # all locations are in the same region for Manual
+        location_table[key]["region"] = "Home"
 
     count += 1
 
@@ -33,12 +33,12 @@ if not victory_names:
     # Add the game completion location, which will have the Victory item assigned to it automatically
     location_table.append({
         "id": count + 1,
-        "name": "__Manual Game Complete__",
-        "region": "Manual",
+        "name": "__Game Complete__",
+        "region": "Home",
         "requires": []
         # "category": custom_victory_location["category"] if "category" in custom_victory_location else []
     })
-    victory_names.append("__Manual Game Complete__")
+    victory_names.append("__Game Complete__")
 
 location_id_to_name: dict[int, str] = {}
 location_name_to_location: dict[str, dict] = {}
@@ -53,8 +53,6 @@ for item in location_table:
             location_name_groups[c] = []
         location_name_groups[c].append(item["name"])
 
-
-# location_id_to_name[None] = "__Manual Game Complete__"
 location_name_to_id = {name: id for id, name in location_id_to_name.items()}
 
 ######################
@@ -62,5 +60,5 @@ location_name_to_id = {name: id for id, name in location_id_to_name.items()}
 ######################
 
 
-class ManualLocation(Location):
-    game = "Manual"
+class SlimeLocation(Location):
+    game = "Slime Rancher"
